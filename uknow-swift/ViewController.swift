@@ -19,8 +19,16 @@ class ViewController: UIViewController {
         
         self.reverseBtn.addTarget(self, action: #selector(reverseBtnClicked), for: .touchUpInside)
         
-        let dic = Dictionary("hello".map { ($0, 1) }, uniquingKeysWith: +)
-        print(dic)
+        let todoVCBtn = UIButton(frame: CGRect(x: 20, y: 140, width: 100, height: 40))
+        
+        todoVCBtn.setTitle("todoVC", for: .normal)
+        todoVCBtn.setTitleColor(.black, for: .normal)
+        self.view.addSubview(todoVCBtn)
+        todoVCBtn.addTarget(self, action: #selector(todoVCBtnClicked), for: .touchUpInside)
+        
+//        let dic = Dictionary("hello".map { ($0, 1) }, uniquingKeysWith: +)
+//        print(dic)
+        
         
     }
     
@@ -37,6 +45,11 @@ extension ViewController {
 
         
         self.navigationController?.pushViewController(reverse(), animated: true)
+    }
+    
+    @objc private func todoVCBtnClicked(_ send: UIButton) {
+        
+        self.navigationController?.pushViewController(TableViewController(), animated: true)
     }
 }
 
