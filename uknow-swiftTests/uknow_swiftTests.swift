@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import uknow_swift
 
 class uknow_swiftTests: XCTestCase {
     

@@ -11,6 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var basicBtn: UIButton!
     @IBOutlet weak var reverseBtn: UIButton!
     
     override func viewDidLoad() {
@@ -19,10 +20,12 @@ class ViewController: UIViewController {
         
         self.reverseBtn.addTarget(self, action: #selector(reverseBtnClicked), for: .touchUpInside)
         
-        let todoVCBtn = UIButton(frame: CGRect(x: 20, y: 140, width: 100, height: 40))
+        let todoVCBtn = UIButton(frame: CGRect(x: 20, y: 220, width: UIScreen.main.bounds.size.width - 40, height: 40))
         
-        todoVCBtn.setTitle("todoVC", for: .normal)
-        todoVCBtn.setTitleColor(.black, for: .normal)
+        todoVCBtn.backgroundColor = .cyan
+        todoVCBtn.setTitle("3.app", for: .normal)
+        todoVCBtn.setTitleColor(.white, for: .normal)
+        todoVCBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         self.view.addSubview(todoVCBtn)
         todoVCBtn.addTarget(self, action: #selector(todoVCBtnClicked), for: .touchUpInside)
         
@@ -30,6 +33,12 @@ class ViewController: UIViewController {
 //        print(dic)
         
         
+    }
+    @IBAction func basicBtnClick(_ sender: Any) {
+        
+//        self.navigationController?.pushViewController(StringAndCharacters(), animated: true)
+//        self.navigationController?.pushViewController(CollectionTypes(), animated: true)
+        self.navigationController?.pushViewController(ControlFlow(), animated: true)
     }
     
     override func didReceiveMemoryWarning() {
