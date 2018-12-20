@@ -79,23 +79,44 @@ class ControlFlow: UIViewController {
 //        }
         
         
-        let finalSquare = 25
-        var board = [Int](repeating: 0, count: finalSquare + 1)
+//        let finalSquare = 25
+//        var board = [Int](repeating: 0, count: finalSquare + 1)
+//
+//        board[3] = 8; board[6] = 11; board[9] = 9; board[10] = 2
+//        board[14] = -10; board[19] = -11; board[22] = -2; board[24] = -8
+//
+//        var square = 0
+//        var diceRoll = 0
+//        while square < finalSquare {
+//            diceRoll += 1
+//            if diceRoll == 7 {
+//                diceRoll = 1
+//            }
+//            square += diceRoll
+//            if square < board.count {
+//                square += board[square]
+//            }
+//        }
         
-        board[3] = 8; board[6] = 11; board[9] = 9; board[10] = 2
-        board[14] = -10; board[19] = -11; board[22] = -2; board[24] = -8
+        let someCharacter: Character = "z"
+        switch someCharacter {
+        case "a":
+            print("The first letter of the alphabet")
+        case "z":
+            print("The last letter of the alphabet")
+        default:
+            print("Some other character")
+        }
         
-        var square = 0
-        var diceRoll = 0
-        while square < finalSquare {
-            diceRoll += 1
-            if diceRoll == 7 {
-                diceRoll = 1
-            }
-            square += diceRoll
-            if square < board.count {
-                square += board[square]
-            }
+        let anotherPoint = (2, 0)
+        switch anotherPoint {
+        case let(x, y) where x > y:
+            print("on the x-axis with an x value fo \(x)")
+        case (0, let y):
+            print("on the y-axis with a y value of \(y)")
+        case let (x, y):
+            print("somewhere else at (\(x), \(y))")
+        
         }
     }
     

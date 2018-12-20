@@ -14,6 +14,7 @@
 		073737982114BC500067125D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073737962114BC500067125D /* LaunchScreen.storyboard */; };
 		073737A32114BC500067125D /* uknow_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073737A22114BC500067125D /* uknow_swiftTests.swift */; };
 		073737AE2114BC500067125D /* uknow_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073737AD2114BC500067125D /* uknow_swiftUITests.swift */; };
+		0764F25621CB468E00122F93 /* NSError+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0764F25521CB468E00122F93 /* NSError+Description.swift */; };
 		079E1C39216EFFA00034E928 /* StringAndCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E1C38216EFFA00034E928 /* StringAndCharacters.swift */; };
 		07A31875211A02790025E1C8 /* reverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A31874211A02790025E1C8 /* reverse.swift */; };
 		07BE2F9E2182B44A0067FC44 /* ControlFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE2F9D2182B44A0067FC44 /* ControlFlow.swift */; };
@@ -55,6 +56,7 @@
 		073737A92114BC500067125D /* uknow-swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "uknow-swiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		073737AD2114BC500067125D /* uknow_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uknow_swiftUITests.swift; sourceTree = "<group>"; };
 		073737AF2114BC500067125D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0764F25521CB468E00122F93 /* NSError+Description.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Description.swift"; sourceTree = "<group>"; };
 		079E1C38216EFFA00034E928 /* StringAndCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringAndCharacters.swift; sourceTree = "<group>"; };
 		07A31874211A02790025E1C8 /* reverse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reverse.swift; sourceTree = "<group>"; };
 		07BE2F9D2182B44A0067FC44 /* ControlFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlFlow.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		2A1EFCFB2121344300E36579 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				0764F25521CB468E00122F93 /* NSError+Description.swift */,
 				2A1EFCFD212149B400E36579 /* ToDoStore.swift */,
 				2A1EFCFF21214CC900E36579 /* TableViewController.swift */,
 				2A1EFD012121880400E36579 /* TableViewInputCell.swift */,
@@ -313,6 +316,7 @@
 				07A31875211A02790025E1C8 /* reverse.swift in Sources */,
 				2A1EFCFE212149B400E36579 /* ToDoStore.swift in Sources */,
 				073737902114BC4D0067125D /* ViewController.swift in Sources */,
+				0764F25621CB468E00122F93 /* NSError+Description.swift in Sources */,
 				2A1EFD0021214CC900E36579 /* TableViewController.swift in Sources */,
 				0737378E2114BC4D0067125D /* AppDelegate.swift in Sources */,
 				079E1C39216EFFA00034E928 /* StringAndCharacters.swift in Sources */,
