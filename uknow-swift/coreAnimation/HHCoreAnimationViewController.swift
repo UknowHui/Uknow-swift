@@ -8,14 +8,80 @@
 
 import UIKit
 
-class HHCoreAnimationViewController: UIViewController {
-
+class HHCoreAnimationViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        if #available(iOS 14.0, *) {
+            let configuration = UICollectionLayoutListConfiguration(appearance: .grouped)
+            let layout = UICollectionViewCompositionalLayout.list(using: configuration)
+            self.collectionView.setCollectionViewLayout(layout, animated: true)
+        } else {
+            // Fallback on earlier versions
+        }
+        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         // Do any additional setup after loading the view.
     }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        if #available(iOS 14.0, *) {
+            var contentConfiguration = UIListContentConfiguration.cell()
+            contentConfiguration.image = UIImage(systemName: "hammer")
+            contentConfiguration.text = "Core Animation \(indexPath.row + 1)";
+            cell.contentConfiguration = contentConfiguration
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        return cell
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let caStoryboard = UIStoryboard.init(name: "HHCoreAnimation", bundle: nil)
+        
+        switch indexPath.row + 1 {
+        case 1:
+            self.navigationController?.pushViewController(HHCAViewController(), animated: true)
+            break
+        case 5:
+            let ca5VC = caStoryboard.instantiateViewController(identifier: "HHCA5ViewController")
+            self.navigationController?.pushViewController(ca5VC, animated: true)
+            break
+        case 6:
+            self.navigationController?.pushViewController(HHCA6ViewController(), animated: true)
+            break
+        case 7:
+            self.navigationController?.pushViewController(HHCA7ViewController(), animated: true)
+            break
+        case 8:
+            let ca8VC = caStoryboard.instantiateViewController(identifier: "HHCA8ViewController")
+            self.navigationController?.pushViewController(ca8VC, animated: true)
+            break
+        case 9:
+            self.navigationController?.pushViewController(HHCA9ViewController(), animated: true)
+            break
+        case 10:
+            self.navigationController?.pushViewController(HHCA10ViewController(), animated: true)
+            break
+        default:
+            break
+            
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -28,3 +94,4 @@ class HHCoreAnimationViewController: UIViewController {
     */
 
 }
+

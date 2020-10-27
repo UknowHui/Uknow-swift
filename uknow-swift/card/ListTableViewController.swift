@@ -10,35 +10,36 @@ import UIKit
 import Cards
 
 class ListTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(UINib(nibName: "TableViewCardCell", bundle: nil), forCellReuseIdentifier: "Cell")
     }
-
-    // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 10
     }
-
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 427
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let card = cell.viewWithTag(1000) as! CardArticle
-        let cardContent = storyboard!.instantiateViewController(withIdentifier: "CardContent")
+        let card = CardArticle()
+        let cardContent = CardContentViewController()
         
         card.shouldPresent(cardContent, from: self, fullscreen: true)
         return cell
     }
     
-
-
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(GroupViewController(), animated: true)
+    }
 }

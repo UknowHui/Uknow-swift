@@ -24,7 +24,7 @@ class CardContentViewController: UIViewController {
     ]
     
     override func viewDidLoad() {
-        print("Loaded!")
+        self.view.backgroundColor = .white
     }
     
     @IBAction func doMagic(_ sender: Any) {

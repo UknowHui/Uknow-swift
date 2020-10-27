@@ -23,7 +23,7 @@ extension reverse {
         guard let s = s else {
             return nil
         }
-        var chars = Array(s.characters), start = 0
+        var chars = Array(s), start = 0
         _reverse(&chars, 0, chars.count - 1)
         
         for i in 0 ..< chars.count {

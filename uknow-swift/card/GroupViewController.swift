@@ -11,12 +11,11 @@ import Cards
 
 class GroupViewController: UIViewController {
     
-    @IBOutlet weak var group: CardGroup!
-    @IBOutlet weak var sliding: CardGroupSliding!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = .white
         let icons: [UIImage] = [
             
             UIImage(named: "grBackground")!,
@@ -27,14 +26,15 @@ class GroupViewController: UIViewController {
             UIImage(named: "mvBackground")!
             
         ]
-        
+        let sliding = CardGroupSliding()
+        sliding.frame = CGRect(x: 20, y: 100, width: 200, height: 200)
         sliding.icons = icons
+        self.view.addSubview(sliding)
         
-        let groupCardContent = storyboard?.instantiateViewController(withIdentifier: "CardContent")
-        group.shouldPresent(groupCardContent, from: self)
         
-        let slidingCardContent = storyboard?.instantiateViewController(withIdentifier: "CardContent")
-        sliding.shouldPresent(slidingCardContent, from: self)
+        
+        let slidingCardContent = CardContentViewController()
+        sliding.shouldPresent(slidingCardContent, from: self, fullscreen: true)
         
         
     }
