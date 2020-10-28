@@ -23,6 +23,28 @@ class HHLeetcodeViewController: UIViewController {
         
         let S = "asdasfasdasdasdlkjlkjlkjlkjlkj"
         print(self.partitionLabels(S))
+        let root = TreeNode()
+        root.val = 1
+        root.left = TreeNode()
+        root.right = TreeNode()
+        root.right?.val = 2
+        root.right?.left = TreeNode()
+        root.right?.left?.val = 3
+        print(self.preorderTraversal(root))
+    }
+    
+    var list = [Int]()
+    func preorderTraversal(_ root: TreeNode?) -> [Int] {
+        preorder(root)
+        return list
+    }
+    func preorder(_ root: TreeNode?) {
+        guard let root = root else {
+            return
+        }
+        list.append(root.val)
+        preorder(root.left)
+        preorder(root.right)
     }
     
     func partitionLabels(_ S: String) -> [Int] {

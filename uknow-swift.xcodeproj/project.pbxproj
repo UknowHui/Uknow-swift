@@ -39,6 +39,7 @@
 		07E8BD7F246EA2B4001B2CC9 /* HighlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E8BD7B246EA2B4001B2CC9 /* HighlightViewController.swift */; };
 		07E8BD80246EA2B4001B2CC9 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E8BD7C246EA2B4001B2CC9 /* ArticleViewController.swift */; };
 		07E8BD81246EA2B4001B2CC9 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E8BD7D246EA2B4001B2CC9 /* PlayerViewController.swift */; };
+		07F2B1A725481ECA00FF99D2 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F2B1A625481ECA00FF99D2 /* TreeNode.swift */; };
 		07F8ACD921703447007D6736 /* CollectionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8ACD821703447007D6736 /* CollectionTypes.swift */; };
 		2A1EFCFE212149B400E36579 /* ToDoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EFCFD212149B400E36579 /* ToDoStore.swift */; };
 		2A1EFD0021214CC900E36579 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1EFCFF21214CC900E36579 /* TableViewController.swift */; };
@@ -103,6 +104,7 @@
 		07E8BD7B246EA2B4001B2CC9 /* HighlightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightViewController.swift; sourceTree = "<group>"; };
 		07E8BD7C246EA2B4001B2CC9 /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		07E8BD7D246EA2B4001B2CC9 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		07F2B1A625481ECA00FF99D2 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		07F8ACD821703447007D6736 /* CollectionTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTypes.swift; sourceTree = "<group>"; };
 		25352657D9991C3E2D347FD1 /* Pods_uknow_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uknow_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1EFCFD212149B400E36579 /* ToDoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoStore.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				077722722541186E00A4FF17 /* HHLeetcodeViewController.swift */,
+				07F2B1A625481ECA00FF99D2 /* TreeNode.swift */,
 			);
 			path = leetcode;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				0764F25621CB468E00122F93 /* NSError+Description.swift in Sources */,
 				077721512536CFB100A4FF17 /* HHCA8ViewController.swift in Sources */,
 				07E8BD78246EA006001B2CC9 /* TableViewCardCell.swift in Sources */,
+				07F2B1A725481ECA00FF99D2 /* TreeNode.swift in Sources */,
 				2A1EFD0021214CC900E36579 /* TableViewController.swift in Sources */,
 				07E8BD73246E9EFF001B2CC9 /* ListTableViewController.swift in Sources */,
 				077722C125415A1B00A4FF17 /* HHCA10ViewController.swift in Sources */,
