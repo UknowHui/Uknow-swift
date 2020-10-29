@@ -31,6 +31,23 @@ class HHLeetcodeViewController: UIViewController {
         root.right?.left = TreeNode()
         root.right?.left?.val = 3
         print(self.preorderTraversal(root))
+        
+        print(self.uniqueOccurrences([1,2,2,1,1,3]))
+    }
+    
+    func uniqueOccurrences(_ arr: [Int]) -> Bool {
+        var map = [Int: Int]()
+        var list = [Int]()
+        for value in arr {
+            map[value] = (map[value] ?? 0) + 1
+        }
+        for num in map.values {
+            if list.contains(num) {
+                return false
+            }
+            list.append(num)
+        }
+        return true
     }
     
     var list = [Int]()
