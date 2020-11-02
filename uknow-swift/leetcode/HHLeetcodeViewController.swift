@@ -35,6 +35,19 @@ class HHLeetcodeViewController: UIViewController {
         print(self.uniqueOccurrences([1,2,2,1,1,3]))
     }
     
+    func intersection(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+//            var arr = [Int]()
+//            for i in nums1 {
+//                for j in nums2 {
+//                    if i == j && !arr.contains(i){
+//                        arr.append(i)
+//                    }
+//                }
+//            }
+//        return arr
+        return Array(Set(nums1).intersection(Set(nums2)))
+    }
+    
     func uniqueOccurrences(_ arr: [Int]) -> Bool {
         var map = [Int: Int]()
         var list = [Int]()

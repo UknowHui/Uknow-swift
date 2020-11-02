@@ -8,11 +8,13 @@
 
 import UIKit
 
-class HHCA10ViewController: UIViewController {
+class HHCA10ViewController: UIViewController, CAAnimationDelegate {
 
     let colorLayer = CALayer()
     let colorView = UIView()
     let layerView = UIView()
+    let containerView = UIView()
+    var ballView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +31,83 @@ class HHCA10ViewController: UIViewController {
 //        colorView.backgroundColor = .red
 //        self.view.addSubview(colorView)
         
-        layerView.bounds = CGRect(x: 0, y: 0, width: 200, height: 200)
-        layerView.center = CGPoint(x: self.view.width * 0.5, y: self.view.height * 0.5)
-        self.view.addSubview(layerView)
+//        layerView.bounds = CGRect(x: 0, y: 0, width: 200, height: 200)
+//        layerView.center = CGPoint(x: self.view.width * 0.5, y: self.view.height * 0.5)
+//        self.view.addSubview(layerView)
+//
+//        self.loadLayerView()
         
-        self.loadLayerView()
+        containerView.frame = CGRect(x: 0, y: 100, width: self.view.width, height: 500)
+        self.view.addSubview(containerView)
+        ballView.frame = containerView.bounds
+        ballView = UIImageView.init(image: UIImage.init(named: "Ball"))
+        containerView.addSubview(ballView)
+        self.animate()
+    }
+    func animate() {
+//        ballView.center = CGPoint(x: 150, y: 32)
+//        let animation = CAKeyframeAnimation()
+//        animation.keyPath = "position"
+//        animation.duration = 1.0
+//        animation.delegate = self
+//        animation.values = [NSValue.init(cgPoint: CGPoint(x: 150, y: 32)),
+//                            NSValue.init(cgPoint: CGPoint(x: 150, y: 268)),
+//                            NSValue.init(cgPoint: CGPoint(x: 150, y: 140)),
+//                            NSValue.init(cgPoint: CGPoint(x: 150, y: 268)),
+//                            NSValue.init(cgPoint: CGPoint(x: 150, y: 220)),
+//                            NSValue.init(cgPoint: CGPoint(x: 150, y: 268)),
+//                            NSValue.init(cgPoint: CGPoint(x: 150, y: 250)),
+//                            NSValue.init(cgPoint: CGPoint(x: 150, y: 268))]
+//        animation.timingFunctions = [CAMediaTimingFunction.init(name: .easeIn),
+//                                     CAMediaTimingFunction.init(name: .easeOut),
+//                                     CAMediaTimingFunction.init(name: .easeIn),
+//                                     CAMediaTimingFunction.init(name: .easeOut),
+//                                     CAMediaTimingFunction.init(name: .easeIn),
+//                                     CAMediaTimingFunction.init(name: .easeOut),
+//                                     CAMediaTimingFunction.init(name: .easeIn)]
+//        animation.keyTimes = [0.0, 0.3, 0.5, 0.7, 0.8, 0.9, 0.95, 1.0]
+//        ballView.layer.position = CGPoint(x: 150, y: 268)
+//        ballView.layer.add(animation, forKey: nil)
+        
+        ballView.center = CGPoint(x: 150, y: 32)
+        let fromValue = NSValue.init(cgPoint: CGPoint(x: 150, y: 32))
+        let toValue = NSValue.init(cgPoint: CGPoint(x: 150, y: 268))
+        let duration = 1
+        let numFrames = duration * 60
+        var frames = [NSValue]()
+        for i in 0...numFrames {
+            var time = 1 / Float(numFrames) * Float(i)
+            time = bounceEaseOut(time)
+            frames.append(interpolateFromValue(fromValue, toValue, time: Float(time)))
+        }
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position"
+        animation.duration = 1.0
+        animation.delegate = self
+        animation.values = frames
+        ballView.layer.add(animation, forKey: nil)
+    }
+    func interpolate(_ from:CGFloat, _ to:CGFloat, _ time:CGFloat) -> CGFloat {
+        return (to - from) * time + from
+    }
+    func interpolateFromValue(_ fromValue: NSValue, _ toValue:NSValue, time:Float) -> NSValue {
+        let from = fromValue.cgPointValue
+        let to = toValue.cgPointValue
+        let result = CGPoint(x: interpolate(from.x, to.x, CGFloat(time)), y: interpolate(from.y, to.y, CGFloat(time)))
+        return NSValue.init(cgPoint: result)
+    }
+    func quadraticEaseInOut(_ t: Float) -> Float {
+        return (t < 0.5) ? (2 * t * t) : (-2 * t * t) + (4 * t) - 1
+    }
+    func bounceEaseOut(_ t: Float) -> Float {
+        if t < 4/11.0 {
+            return (121 * t * t) / 16.0
+        } else if (t < 8/11.0) {
+            return (363/40.0 * t * t) - (99/10.0 * t) + 17/5.0;
+        } else if (t < 9/10.0) {
+            return (4356/361.0 * t * t) - (35442/1805.0 * t) + 16061/1805.0;
+        }
+        return (54/5.0 * t * t) - (513/25.0 * t) + 268/25.0;
     }
     func loadLayerView() {
         let function = CAMediaTimingFunction.init(name: .easeOut)
@@ -71,13 +145,15 @@ class HHCA10ViewController: UIViewController {
 //
 //        }
         
-        let animation = CAKeyframeAnimation()
-        animation.keyPath = "backgroundColor"
-        animation.duration = 2.0
-        animation.values = [UIColor.blue.cgColor, UIColor.red.cgColor, UIColor.green.cgColor, UIColor.blue.cgColor]
-        let fn = CAMediaTimingFunction.init(name: .easeIn)
-        animation.timingFunctions = [fn, fn, fn]
-        colorLayer.add(animation, forKey: nil)
+//        let animation = CAKeyframeAnimation()
+//        animation.keyPath = "backgroundColor"
+//        animation.duration = 2.0
+//        animation.values = [UIColor.blue.cgColor, UIColor.red.cgColor, UIColor.green.cgColor, UIColor.blue.cgColor]
+//        let fn = CAMediaTimingFunction.init(name: .easeIn)
+//        animation.timingFunctions = [fn, fn, fn]
+//        colorLayer.add(animation, forKey: nil)
+        
+        self.animate()
     }
     
 
