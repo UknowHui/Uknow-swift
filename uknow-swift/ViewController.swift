@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SnapKit
 
 class ViewController: UIViewController {
 
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         
         self.reverseBtn.addTarget(self, action: #selector(reverseBtnClicked), for: .touchUpInside)
         
-        let todoVCBtn = UIButton(frame: CGRect(x: 20, y: 220, width: UIScreen.main.bounds.size.width - 40, height: 40))
+        let todoVCBtn = UIButton()
         
         todoVCBtn.backgroundColor = .cyan
         todoVCBtn.setTitle("3.app", for: .normal)
@@ -28,22 +28,40 @@ class ViewController: UIViewController {
         todoVCBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         self.view.addSubview(todoVCBtn)
         todoVCBtn.addTarget(self, action: #selector(todoVCBtnClicked), for: .touchUpInside)
+        todoVCBtn.snp.makeConstraints { (make) in
+            make.leading.equalTo(self.view).offset(20)
+            make.trailing.equalTo(self.view).offset(-20)
+            make.top.equalTo(self.reverseBtn.snp.bottom).offset(20)
+            make.height.equalTo(40)
+        }
         
-        let coreAnimationBtn = UIButton(frame: CGRect(x: 20, y: 280, width: UIScreen.main.bounds.size.width - 40, height: 40))
+        let coreAnimationBtn = UIButton()
         coreAnimationBtn.backgroundColor = .blue
         coreAnimationBtn.setTitle("4.coreAnimation", for: .normal)
         coreAnimationBtn.setTitleColor(.white, for: .normal)
         coreAnimationBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         self.view.addSubview(coreAnimationBtn)
         coreAnimationBtn.addTarget(self, action: #selector(coreAnimationBtnClick), for: .touchUpInside)
+        coreAnimationBtn.snp.makeConstraints { (make) in
+            make.leading.equalTo(self.view).offset(20)
+            make.trailing.equalTo(self.view).offset(-20)
+            make.top.equalTo(todoVCBtn.snp.bottom).offset(20)
+            make.height.equalTo(40)
+        }
         
-        let leetcodeBtn = UIButton(frame: CGRect(x: 20, y: 340, width: UIScreen.main.bounds.size.width - 40, height: 40))
+        let leetcodeBtn = UIButton()
         leetcodeBtn.backgroundColor = .magenta
         leetcodeBtn.setTitle("5.leetcodeBtn", for: .normal)
         leetcodeBtn.setTitleColor(.white, for: .normal)
         leetcodeBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         self.view.addSubview(leetcodeBtn)
         leetcodeBtn.addTarget(self, action: #selector(leetcodeBtnClick(_:)), for: .touchUpInside)
+        leetcodeBtn.snp.makeConstraints { (make) in
+            make.leading.equalTo(self.view).offset(20)
+            make.trailing.equalTo(self.view).offset(-20)
+            make.top.equalTo(coreAnimationBtn.snp.bottom).offset(20)
+            make.height.equalTo(40)
+        }
         
         
 //        let dic = Dictionary("hello".map { ($0, 1) }, uniquingKeysWith: +)

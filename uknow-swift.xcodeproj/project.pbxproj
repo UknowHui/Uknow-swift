@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,9 @@
 		0777226B2539984400A4FF17 /* HHCA9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0777226A2539984400A4FF17 /* HHCA9ViewController.swift */; };
 		077722732541186E00A4FF17 /* HHLeetcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077722722541186E00A4FF17 /* HHLeetcodeViewController.swift */; };
 		077722C125415A1B00A4FF17 /* HHCA10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077722C025415A1B00A4FF17 /* HHCA10ViewController.swift */; };
+		07921FAC255E52A3000DF6E1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07921FAA255E52A3000DF6E1 /* CollectionViewCell.swift */; };
+		07921FAD255E52A3000DF6E1 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07921FAB255E52A3000DF6E1 /* CollectionViewCell.xib */; };
+		07922007255E86C0000DF6E1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 07922006255E86C0000DF6E1 /* SnapKit */; };
 		079E1C39216EFFA00034E928 /* StringAndCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E1C38216EFFA00034E928 /* StringAndCharacters.swift */; };
 		07A31875211A02790025E1C8 /* reverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A31874211A02790025E1C8 /* reverse.swift */; };
 		07ABE8E1250B65300002ABE6 /* HHCA6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ABE8E0250B65300002ABE6 /* HHCA6ViewController.swift */; };
@@ -88,6 +91,9 @@
 		0777226A2539984400A4FF17 /* HHCA9ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHCA9ViewController.swift; sourceTree = "<group>"; };
 		077722722541186E00A4FF17 /* HHLeetcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHLeetcodeViewController.swift; sourceTree = "<group>"; };
 		077722C025415A1B00A4FF17 /* HHCA10ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHCA10ViewController.swift; sourceTree = "<group>"; };
+		07921FA6255E5030000DF6E1 /* uknow-swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "uknow-swift.entitlements"; sourceTree = "<group>"; };
+		07921FAA255E52A3000DF6E1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		07921FAB255E52A3000DF6E1 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		079E1C38216EFFA00034E928 /* StringAndCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringAndCharacters.swift; sourceTree = "<group>"; };
 		07A31874211A02790025E1C8 /* reverse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reverse.swift; sourceTree = "<group>"; };
 		07ABE8E0250B65300002ABE6 /* HHCA6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHCA6ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60339C1FDC4EA8ED4FE4FB1C /* Pods_uknow_swift.framework in Frameworks */,
+				07922007255E86C0000DF6E1 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				0701045124FCA800001BA263 /* HHCoreAnimationViewController.swift */,
+				07921FAA255E52A3000DF6E1 /* CollectionViewCell.swift */,
+				07921FAB255E52A3000DF6E1 /* CollectionViewCell.xib */,
 				074B6F782500BEA50009177C /* HHCAViewController.swift */,
 				074B6FFA2500DCA50009177C /* HHCA5ViewController.swift */,
 				07ABE8E0250B65300002ABE6 /* HHCA6ViewController.swift */,
@@ -183,6 +192,7 @@
 		0737378C2114BC4D0067125D /* uknow-swift */ = {
 			isa = PBXGroup;
 			children = (
+				07921FA6255E5030000DF6E1 /* uknow-swift.entitlements */,
 				077722712541185200A4FF17 /* leetcode */,
 				07E524A12531520A00F3D7BC /* Tools */,
 				0701044E24FCA77D001BA263 /* coreAnimation */,
@@ -316,6 +326,9 @@
 			dependencies = (
 			);
 			name = "uknow-swift";
+			packageProductDependencies = (
+				07922006255E86C0000DF6E1 /* SnapKit */,
+			);
 			productName = "uknow-swift";
 			productReference = 0737378A2114BC4D0067125D /* uknow-swift.app */;
 			productType = "com.apple.product-type.application";
@@ -390,6 +403,9 @@
 				Base,
 			);
 			mainGroup = 073737812114BC4D0067125D;
+			packageReferences = (
+				07922005255E86C0000DF6E1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 0737378B2114BC4D0067125D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -412,6 +428,7 @@
 				2A1EFD06212188F500E36579 /* TableViewInputCell.xib in Resources */,
 				07E524A825315FCE00F3D7BC /* Ship.mp4 in Resources */,
 				073737932114BC4D0067125D /* Main.storyboard in Resources */,
+				07921FAD255E52A3000DF6E1 /* CollectionViewCell.xib in Resources */,
 				07E8BD79246EA006001B2CC9 /* TableViewCardCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +516,7 @@
 				077721512536CFB100A4FF17 /* HHCA8ViewController.swift in Sources */,
 				07E8BD78246EA006001B2CC9 /* TableViewCardCell.swift in Sources */,
 				07F2B1A725481ECA00FF99D2 /* TreeNode.swift in Sources */,
+				07921FAC255E52A3000DF6E1 /* CollectionViewCell.swift in Sources */,
 				2A1EFD0021214CC900E36579 /* TableViewController.swift in Sources */,
 				07E8BD73246E9EFF001B2CC9 /* ListTableViewController.swift in Sources */,
 				077722C125415A1B00A4FF17 /* HHCA10ViewController.swift in Sources */,
@@ -683,15 +701,18 @@
 			baseConfigurationReference = B121C2C14CC4E86CDB1AF29A /* Pods-uknow-swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "uknow-swift/uknow-swift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KEAW7H754;
 				INFOPLIST_FILE = "uknow-swift/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -702,15 +723,18 @@
 			baseConfigurationReference = FC5964A3792B2C93F9779F2D /* Pods-uknow-swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "uknow-swift/uknow-swift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KEAW7H754;
 				INFOPLIST_FILE = "uknow-swift/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -838,6 +862,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		07922005255E86C0000DF6E1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		07922006255E86C0000DF6E1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07922005255E86C0000DF6E1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 073737822114BC4D0067125D /* Project object */;
 }

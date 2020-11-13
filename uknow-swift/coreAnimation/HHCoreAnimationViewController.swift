@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HHCoreAnimationViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class HHCoreAnimationViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -19,13 +19,14 @@ class HHCoreAnimationViewController: UIViewController, UICollectionViewDataSourc
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         if #available(iOS 14.0, *) {
-            let configuration = UICollectionLayoutListConfiguration(appearance: .grouped)
-            let layout = UICollectionViewCompositionalLayout.list(using: configuration)
-            self.collectionView.setCollectionViewLayout(layout, animated: true)
+//            let configuration = UICollectionLayoutListConfiguration(appearance: .grouped)
+//            let layout = UICollectionViewCompositionalLayout.list(using: configuration)
+//            self.collectionView.setCollectionViewLayout(layout, animated: true)
         } else {
             // Fallback on earlier versions
+
         }
-        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        self.collectionView.register(UINib.init(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
         // Do any additional setup after loading the view.
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -34,17 +35,21 @@ class HHCoreAnimationViewController: UIViewController, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.width, height: 100)
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        if #available(iOS 14.0, *) {
-            var contentConfiguration = UIListContentConfiguration.cell()
-            contentConfiguration.image = UIImage(systemName: "hammer")
-            contentConfiguration.text = "Core Animation \(indexPath.row + 1)";
-            cell.contentConfiguration = contentConfiguration
-        } else {
+        let cell : CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+//        if #available(iOS 14.0, *) {
+//            var contentConfiguration = UIListContentConfiguration.cell()
+//            contentConfiguration.image = UIImage(systemName: "hammer")
+//            contentConfiguration.text = "Core Animation \(indexPath.row + 1)";
+//            cell.contentConfiguration = contentConfiguration
+//        } else {
             // Fallback on earlier versions
-        }
+            cell.collectionImage?.image = UIImage(systemName: "hammer")
+            cell.collectionLabel?.text = "Core Animation \(indexPath.row + 1)";
+//        }
         
         return cell
         

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import GLKit
+//import GLKit
 
 class HHCA5ViewController: UIViewController {
 
@@ -83,16 +83,16 @@ class HHCA5ViewController: UIViewController {
 //            }
 //        }
 
-        let matrix4 : GLKMatrix4 = GLKMatrix4Make(Float(transform.m11), Float(transform.m12), Float(transform.m13), Float(transform.m14), Float(transform.m21), Float(transform.m22), Float(transform.m23), Float(transform.m24), Float(transform.m31), Float(transform.m32), Float(transform.m33), Float(transform.m34), Float(transform.m41), Float(transform.m42), Float(transform.m43), Float(transform.m44))
-        let matrix3: GLKMatrix3 = GLKMatrix4GetMatrix3(matrix4)
-        var normal: GLKVector3 = GLKVector3Make(0, 0, 1)
-        normal = GLKMatrix3MultiplyVector3(matrix3, normal)
-        normal = GLKVector3Normalize(normal)
-        
-        let light: GLKVector3  = GLKVector3Normalize(GLKVector3Make(0, 1, -0.5))
-        let dotProduct:Float = GLKVector3DotProduct(light, normal)
-        let shadow: Float = 1 + dotProduct - 0.5
-        layer.backgroundColor = UIColor.init(white: 0, alpha: CGFloat(shadow)).cgColor
+//        let matrix4 : GLKMatrix4 = GLKMatrix4Make(Float(transform.m11), Float(transform.m12), Float(transform.m13), Float(transform.m14), Float(transform.m21), Float(transform.m22), Float(transform.m23), Float(transform.m24), Float(transform.m31), Float(transform.m32), Float(transform.m33), Float(transform.m34), Float(transform.m41), Float(transform.m42), Float(transform.m43), Float(transform.m44))
+//        let matrix3: GLKMatrix3 = GLKMatrix4GetMatrix3(matrix4)
+//        var normal: GLKVector3 = GLKVector3Make(0, 0, 1)
+//        normal = GLKMatrix3MultiplyVector3(matrix3, normal)
+//        normal = GLKVector3Normalize(normal)
+//        
+//        let light: GLKVector3  = GLKVector3Normalize(GLKVector3Make(0, 1, -0.5))
+//        let dotProduct:Float = GLKVector3DotProduct(light, normal)
+//        let shadow: Float = 1 + dotProduct - 0.5
+//        layer.backgroundColor = UIColor.init(white: 0, alpha: CGFloat(shadow)).cgColor
         
     }
     
