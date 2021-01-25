@@ -16,24 +16,60 @@ class HHLeetcodeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        let name = "alex"
-        let typed = "aaleex"
+//        let name = "alex"
+//        let typed = "aaleex"
+//
+//        print(self.isLongPressedName(name, typed))
+//
+//        let S = "asdasfasdasdasdlkjlkjlkjlkjlkj"
+//        print(self.partitionLabels(S))
+//        let root = TreeNode()
+//        root.val = 1
+//        root.left = TreeNode()
+//        root.right = TreeNode()
+//        root.right?.val = 2
+//        root.right?.left = TreeNode()
+//        root.right?.left?.val = 3
+//        print(self.preorderTraversal(root))
+//
+//        print(self.uniqueOccurrences([1,2,2,1,1,3]))
         
-        print(self.isLongPressedName(name, typed))
-        
-        let S = "asdasfasdasdasdlkjlkjlkjlkjlkj"
-        print(self.partitionLabels(S))
-        let root = TreeNode()
-        root.val = 1
-        root.left = TreeNode()
-        root.right = TreeNode()
-        root.right?.val = 2
-        root.right?.left = TreeNode()
-        root.right?.left?.val = 3
-        print(self.preorderTraversal(root))
-        
-        print(self.uniqueOccurrences([1,2,2,1,1,3]))
+        print(self.maximumGap([15252,16764,27963,7817,26155,20757,3478,22602,20404,6739,16790,10588,16521,6644,20880,15632,27078,25463,20124,15728,30042,16604,17223,4388,23646,32683,23688,12439,30630,3895,7926,22101,32406,21540,31799,3768,26679,21799,23740]))
     }
+    
+        func maximumGap(_ nums: [Int]) -> Int {
+            if nums.count < 2 {
+                return 0
+            }
+            var numsArray = [Int]()
+//            var a = nums[0]
+//            numsArray.append(a)
+            
+            for i in 0..<nums.count {
+                for j in 0..<numsArray.count {
+                    if nums[i] > numsArray[j] {
+                        numsArray.insert(i, at: j)
+                        continue
+                    }
+                }
+//                let b = nums[i]
+//                if (b < a) {
+//                    numsArray.insert(b, at: 0)
+//                    a = b
+//                    continue
+//                }
+                
+            }
+            var result = 0
+            var f = numsArray[0]
+            for j in numsArray {
+                if (j - f) > result {
+                    result = j - f
+                }
+                f = j
+            }
+            return result
+        }
     
     func intersection(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
 //            var arr = [Int]()

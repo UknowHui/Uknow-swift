@@ -33,10 +33,10 @@ class HHCoreAnimationViewController: UIViewController, UICollectionViewDataSourc
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 14
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.width, height: 100)
+        return CGSize(width: self.view.width, height: 50)
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
@@ -81,6 +81,17 @@ class HHCoreAnimationViewController: UIViewController, UICollectionViewDataSourc
             break
         case 10:
             self.navigationController?.pushViewController(HHCA10ViewController(), animated: true)
+            break
+        case 11:
+            self.navigationController?.pushViewController(HHCA11ViewController(), animated: true)
+            break
+        case 12:
+            break
+        case 13:
+            self.navigationController?.pushViewController(HHCA13ViewController(), animated: true)
+            break
+        case 14:
+            self.navigationController?.pushViewController(HHCA14ViewController(), animated: true)
             break
         default:
             break
